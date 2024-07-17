@@ -1,5 +1,9 @@
-public class Subtask extends Task{
+import java.util.HashMap;
+
+public class Subtask extends Task {
 
     public Subtask(String nameTask, String descriptionTask, Status status) {
-        super(nameTask, descriptionTask, status);}
+        super(nameTask, descriptionTask, status);
+    }
+
 }

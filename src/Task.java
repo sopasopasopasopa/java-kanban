@@ -27,9 +27,10 @@ public class Task {
     @Override
     public String toString() {
         return "Task{"
-                + "nameTask ='" + nameTask + '\''
-                + ", description =" + descriptionTask
+                + "nameTask = " + nameTask + '\''
+                + ", description = " + descriptionTask
                 + ", taskId = " + taskId
+                + ", status = " + status
                 + '}';
     }
 
