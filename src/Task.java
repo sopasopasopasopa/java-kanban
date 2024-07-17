@@ -12,6 +12,27 @@ public class Task {
         this.status = status;
     }
 
+    public void setTaskId(int taskId) {
+        this.taskId = taskId;
+    }
+
+    public int getTaskId() {
+        return taskId;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    @Override
+    public String toString() {
+        return "Task{"
+                + "nameTask ='" + nameTask + '\''
+                + ", description =" + descriptionTask
+                + ", taskId = " + taskId
+                + '}';
+    }
+
     enum Status {
         NEW,
         IN_PROGRESS,
