@@ -7,5 +7,7 @@ public class TaskManager {
     HashMap<Integer, Subtask> subtasks = new HashMap<>();
     HashMap<Integer, Epic> epics = new HashMap<>();
 
-    public
+    public TaskManager() {
+        this.id = 1;
+    }
 }
