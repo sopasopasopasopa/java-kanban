@@ -1,3 +1,6 @@
+package com.javakaban.app.typeTask;
+
+import com.javakaban.app.enumStatus.Status;
 
 public class Task {
 
@@ -20,8 +23,28 @@ public class Task {
         return taskId;
     }
 
+    public String getNameTask() {
+        return nameTask;
+    }
+
+    public void setNameTask(String nameTask) {
+        this.nameTask = nameTask;
+    }
+
+    public String getDescriptionTask() {
+        return descriptionTask;
+    }
+
+    public void setDescriptionTask(String descriptionTask) {
+        this.descriptionTask = descriptionTask;
+    }
+
     public Status getStatus() {
         return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override
@@ -32,11 +55,5 @@ public class Task {
                 + ", taskId = " + taskId
                 + ", status = " + status
                 + '}';
-    }
-
-    enum Status {
-        NEW,
-        IN_PROGRESS,
-        DONE
     }
 }
