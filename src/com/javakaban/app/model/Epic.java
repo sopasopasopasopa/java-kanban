@@ -1,13 +1,25 @@
-package com.javakaban.app.typeTask;
+package com.javakaban.app.model;
 
-import com.javakaban.app.enumStatus.Status;
+import java.util.ArrayList;
 
-import java.util.HashMap;
+public class Epic extends Task {
 
-public class Epic extends Task{
+    private ArrayList<Subtask> subtasks = new ArrayList<>();
 
     public Epic(String nameTask, String descriptionTask, Status status) {
         super(nameTask, descriptionTask, status);
+    }
+
+    public void addSubtask(Subtask subtask) {
+        subtasks.add(subtask);
+    }
+
+    public  void removeSubtasks() {
+        subtasks.clear();
+    }
+
+    public ArrayList<Subtask> getSubtasks() {
+        return subtasks;
     }
 
     @Override

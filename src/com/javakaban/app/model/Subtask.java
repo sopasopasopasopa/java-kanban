@@ -1,10 +1,10 @@
-package com.javakaban.app.typeTask;
+package com.javakaban.app.model;
 
-import com.javakaban.app.enumStatus.Status;
 
+import java.util.Objects;
 
 public class Subtask extends Task {
-    int epicId;
+    private int epicId;
 
     public Subtask(String nameTask, String descriptionTask, Status status, int epicId) {
         super(nameTask, descriptionTask, status);
@@ -17,6 +17,19 @@ public class Subtask extends Task {
 
     public void setEpicId(int epicId) {
         this.epicId = epicId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Subtask subtask = (Subtask) o;
+        return epicId == subtask.epicId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(epicId);
     }
 
     @Override

@@ -1,10 +1,12 @@
 package com.javakaban.app;
 
-import com.javakaban.app.enumStatus.Status;
-import com.javakaban.app.typeTask.Task;
-import com.javakaban.app.typeTask.Subtask;
-import com.javakaban.app.typeTask.Epic;
+
+import com.javakaban.app.model.Task;
+import com.javakaban.app.model.Subtask;
+import com.javakaban.app.model.Epic;
+import com.javakaban.app.model.Status;
 import com.javakaban.app.manager.TaskManager;
+
 
 
 public class Main {

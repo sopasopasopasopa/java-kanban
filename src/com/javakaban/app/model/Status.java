@@ -1,4 +1,4 @@
-package com.javakaban.app.enumStatus;
+package com.javakaban.app.model;
 
 public enum Status {
     NEW,

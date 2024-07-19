@@ -1,12 +1,11 @@
 package com.javakaban.app.manager;
 
-import com.javakaban.app.enumStatus.Status;
-import com.javakaban.app.typeTask.Task;
-import com.javakaban.app.typeTask.Subtask;
-import com.javakaban.app.typeTask.Epic;
+import com.javakaban.app.model.Status;
+import com.javakaban.app.model.Task;
+import com.javakaban.app.model.Subtask;
+import com.javakaban.app.model.Epic;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class TaskManager {
 
@@ -27,37 +26,59 @@ public class TaskManager {
         return subtasks.get(subtaskId);
     }
 
+    public Task updateTask(Task task) {
+        tasks.put(task.getTaskId(), task);
+        return task;
+    }
+
+    public Task updateEpic(Epic epic) {
+        Epic oldEpic = epics.get(epic.getTaskId());
+        oldEpic.setNameTask(epic.getNameTask());
+        oldEpic.setDescriptionTask(epic.getDescriptionTask());
+        return oldEpic;
+    }
+
+    public Task updateSubtask(Subtask subtask) {
+        int epicId = subtask.getEpicId();
+        Subtask oldSubtask = subtasks.get(subtask.getTaskId());
+        oldSubtask.setNameTask(subtask.getNameTask());
+        oldSubtask.setDescriptionTask(subtask.getDescriptionTask());
+        Epic epic = epics.get(epicId);
+        return subtask;
+    }
+
     public void createTask(Task task) {
-        int taskId = ++id;
-        task.setTaskId(taskId);
-        tasks.put(taskId, task);
+        task.setTaskId(++id);
+        tasks.put(task.getTaskId(), task);
     }
 
     public void createEpic(Epic epic) {
-        createTask(epic);
-        epic.setTaskId(id);
-        epics.put(id, epic);
+        epic.setTaskId(++id);
+        epics.put(epic.getTaskId(), epic);
     }
 
     public void createSubtask(Epic epic, Subtask subtask) {
-        createTask(subtask);
-        subtask.setTaskId(id);
+        subtask.setTaskId(++id);
         subtask.setEpicId(epic.getTaskId());
-        subtasks.put(id, subtask);
+        subtasks.put(subtask.getTaskId(), subtask);
+        epic.addSubtask(subtask);
         refreshStatuses();
     }
 
     public void removeTasks() {
         tasks.clear();
-        removeEpics();
     }
 
     public void removeEpics() {
         epics.clear();
-        removeSubtasks();
+        subtasks.clear();
     }
     public void removeSubtasks() {
         subtasks.clear();
+        for (Epic epic : epics.values()) {
+            epic.removeSubtasks();
+            epic.setStatus(Status.NEW);
+        }
     }
 
     public List<Task> getAllTasks() {
