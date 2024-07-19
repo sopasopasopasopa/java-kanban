@@ -17,7 +17,6 @@ public class Epic extends Task{
                 + ", description = " + descriptionTask
                 + ", epicId = " + taskId
                 + ", status = " + status
-//                + ", Subtasks = " + subtasks
                 + '}';
     }
 
