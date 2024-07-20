@@ -1,4 +1,4 @@
-package com.javakaban.app.model;
+package com.javakanban.app.model;
 
 
 import java.util.Objects;
@@ -6,8 +6,8 @@ import java.util.Objects;
 public class Subtask extends Task {
     private int epicId;
 
-    public Subtask(String nameTask, String descriptionTask, Status status, int epicId) {
-        super(nameTask, descriptionTask, status);
+    public Subtask(String nameTask, String descriptionTask, int epicId) {
+        super(nameTask, descriptionTask);
         this.setEpicId(epicId);
     }
 

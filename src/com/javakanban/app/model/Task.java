@@ -1,4 +1,4 @@
-package com.javakaban.app.model;
+package com.javakanban.app.model;
 
 import java.util.Objects;
 
@@ -7,12 +7,11 @@ public class Task {
     protected String nameTask;
     protected String descriptionTask;
     protected int taskId;
-    protected Status status;
+    protected Status status = Status.NEW;
 
-    public Task(String nameTask, String descriptionTask, Status status) {
+    public Task(String nameTask, String descriptionTask) {
         this.nameTask = nameTask;
         this.descriptionTask = descriptionTask;
-        this.status = status;
     }
 
     public void setTaskId(int taskId) {
