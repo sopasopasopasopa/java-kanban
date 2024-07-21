@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Последний коммит">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java-kanban/создала переменные и инициализировала их" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/manager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/TaskManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,15 +25,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Java projects/yandex practicum java/java-kanban"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Java projects/yandex practicum java/java-kanban&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -82,7 +83,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721465572234</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Последний коммит">
+      <option name="closed" value="true" />
+      <created>1721542626267</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721542626267</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -91,5 +100,15 @@
     <MESSAGE value="Изменения:&#10;1) Перенесла enum статуса в директорию model&#10;2) Изменила метод создания всех типов задач&#10;3) Изменила методы удаления всех типов задач&#10;4) Добавила поле в классе Epic для хранения субтасков&#10;5) Переопределила методы equals и hashCode в классах Subtask и Task" />
     <MESSAGE value="Последний коммит" />
     <option name="LAST_COMMIT_MESSAGE" value="Последний коммит" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

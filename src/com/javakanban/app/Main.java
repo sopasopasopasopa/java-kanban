@@ -26,10 +26,10 @@ public class Main {
         taskManager.createTask(task1);
         taskManager.createTask(task2);
         taskManager.createEpic(epic1);
-        taskManager.createSubtask(epic1, subtask1);
-        taskManager.createSubtask(epic1, subtask2);
+        taskManager.createSubtask(subtask1);
+        taskManager.createSubtask(subtask2);
         taskManager.createEpic(epic2);
-        taskManager.createSubtask(epic2, subtask3);
+        taskManager.createSubtask(subtask3);
 
 
         System.out.println("task");
@@ -42,7 +42,7 @@ public class Main {
 
         task1.setStatus(Status.DONE);
 
-        subtask1.setStatus(Status.NEW);
+        subtask1.setStatus(Status.DONE);
         taskManager.updateStatusForEpics(epic1);
 
 
