@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Реализовано Обновление статуса">
+    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Последний коммит">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakaban/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakaban/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakaban/app/enumStatus/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakaban/app/model/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakaban/app/manager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakaban/app/manager/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakaban/app/typeTask/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakaban/app/model/Epic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakaban/app/typeTask/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakaban/app/model/Subtask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakaban/app/typeTask/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakaban/app/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/создала переменные и инициализировала их" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java-kanban/создала переменные и инициализировала их" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +30,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Java projects/java-kanban"
+    "last_opened_file_path": "C:/Java projects/yandex practicum java/java-kanban"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -72,12 +66,30 @@
       <option name="project" value="LOCAL" />
       <updated>1721375448861</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Изменения:&#10;1) Перенесла enum статуса в директорию model&#10;2) Изменила метод создания всех типов задач&#10;3) Изменила методы удаления всех типов задач&#10;4) Добавила поле в классе Epic для хранения субтасков&#10;5) Переопределила методы equals и hashCode в классах Subtask и Task">
+      <option name="closed" value="true" />
+      <created>1721414085290</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721414085290</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Последний коммит">
+      <option name="closed" value="true" />
+      <created>1721465572234</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721465572234</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Реализовано:&#10;Получение списка всех задач.&#10; Удаление всех задач.&#10; Получение по идентификатору.&#10; Создание. Сам объект должен передаваться в качестве&#10; параметра." />
     <MESSAGE value="Реализовано Обновление статуса" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано Обновление статуса" />
+    <MESSAGE value="Изменения:&#10;1) Перенесла enum статуса в директорию model&#10;2) Изменила метод создания всех типов задач&#10;3) Изменила методы удаления всех типов задач&#10;4) Добавила поле в классе Epic для хранения субтасков&#10;5) Переопределила методы equals и hashCode в классах Subtask и Task" />
+    <MESSAGE value="Последний коммит" />
+    <option name="LAST_COMMIT_MESSAGE" value="Последний коммит" />
   </component>
 </project>
