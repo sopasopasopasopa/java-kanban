@@ -17,19 +17,19 @@ public class Main {
         Task task1 =new Task("task1", "task number one");
         Task task2 =new Task("task2", "task number two");
         Epic epic1 = new Epic("epic1", "epic number one");
+        Epic epic2 = new Epic("epic2", "epic number two");
         Subtask subtask1 = new Subtask("subtask1", "subtask number one", epic1.getTaskId());
         Subtask subtask2 = new Subtask("subtask2", "subtask number two", epic1.getTaskId());
-        Epic epic2 = new Epic("epic2", "epic number two");
         Subtask subtask3 = new Subtask("subtask3", "subtask number three", epic2.getTaskId());
 
 
         taskManager.createTask(task1);
         taskManager.createTask(task2);
         taskManager.createEpic(epic1);
-        taskManager.createSubtask(subtask1);
-        taskManager.createSubtask(subtask2);
         taskManager.createEpic(epic2);
-        taskManager.createSubtask(subtask3);
+        taskManager.createSubtask(epic1, subtask1);
+        taskManager.createSubtask(epic1, subtask2);
+        taskManager.createSubtask(epic2, subtask3);
 
 
         System.out.println("task");

@@ -14,6 +14,9 @@ public class TaskManager {
     HashMap<Integer, Epic> epics = new HashMap<>();
     HashMap<Integer, Subtask> subtasks = new HashMap<>();
 
+    private int generatorId;
+
+
     public Task getTaskById(int taskId) {
         return tasks.get(taskId);
     }
@@ -27,22 +30,22 @@ public class TaskManager {
     }
 
     public void updateTask(Task task) {
-        tasks.put(task.getTaskId(), task);
+        if (tasks.containsValue(task.getTaskId())) {
+            tasks.put(task.getTaskId(), task);
+        }
     }
 
     public void updateEpic(Epic epic) {
-        Epic oldEpic = epics.get(epic.getTaskId());
-        oldEpic.setNameTask(epic.getNameTask());
-        oldEpic.setDescriptionTask(epic.getDescriptionTask());
+        if (epics.containsValue(epic.getTaskId())) {
+            epics.put(epic.getTaskId(), epic);
+            updateStatusForEpics(epic);
+        }
     }
 
     public void updateSubtask(Subtask subtask) {
-        if (subtasks.containsValue(subtask)) {
-            int epicId = subtask.getEpicId();
-            Subtask oldSubtask = subtasks.get(subtask.getTaskId());
-            oldSubtask.setNameTask(subtask.getNameTask());
-            oldSubtask.setDescriptionTask(subtask.getDescriptionTask());
-            Epic epic = epics.get(epicId);
+        if (subtasks.containsValue(subtask.getTaskId())) {
+            Epic epic = epics.get(subtask.getEpicId());
+            subtasks.put(subtask.getTaskId(), subtask);
             updateStatusForEpics(epic);
         }
     }
@@ -57,11 +60,11 @@ public class TaskManager {
         epics.put(epic.getTaskId(), epic);
     }
 
-    public void createSubtask(Subtask subtask) {
+    public void createSubtask(Epic epic, Subtask subtask) {
         subtask.setTaskId(++id);
-        Epic epic = epics.get(subtask.getEpicId());
         subtasks.put(subtask.getTaskId(), subtask);
         epic.addSubtask(subtask);
+        updateStatusForEpics(epic);
     }
 
     public void removeTasks() {
@@ -136,7 +139,4 @@ public class TaskManager {
             epic.setStatus(Status.IN_PROGRESS);
         }
     }
-
-
-
 }

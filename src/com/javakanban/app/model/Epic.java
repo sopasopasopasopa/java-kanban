@@ -22,6 +22,14 @@ public class Epic extends Task {
         return subtaskArrayList;
     }
 
+    public void setSubtaskArrayList(ArrayList<Subtask> subtaskArrayList) {
+        this.subtaskArrayList = subtaskArrayList;
+    }
+
+    public int getEpicIdOfSubtask(Subtask subtask) {
+        return subtask.getEpicId();
+    }
+
     @Override
     public String toString() {
         return "Task{"
