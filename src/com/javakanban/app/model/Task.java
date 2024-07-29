@@ -9,6 +9,12 @@ public class Task {
     protected int taskId;
     protected Status status = Status.NEW;
 
+    public Task(int taskId, String nameTask, String descriptionTask) {
+        this.taskId = taskId;
+        this.nameTask = nameTask;
+        this.descriptionTask = descriptionTask;
+    }
+
     public Task(String nameTask, String descriptionTask) {
         this.nameTask = nameTask;
         this.descriptionTask = descriptionTask;

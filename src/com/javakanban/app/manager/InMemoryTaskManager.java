@@ -105,6 +105,11 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
+    public List<Subtask> getAllSubtasks() {
+        return new ArrayList<>(subtasks.values());
+    }
+
+    @Override
     public List<Subtask> getAllSubtasksForEpic(Epic epic) {
         List<Subtask> matchingSubtaskList = new ArrayList<>();
         matchingSubtaskList = epic.getSubtasksList();
@@ -161,4 +166,5 @@ public class InMemoryTaskManager implements TaskManager {
     public List<Task> getHistory() {
         return historyManager.getHistory();
     }
+
 }

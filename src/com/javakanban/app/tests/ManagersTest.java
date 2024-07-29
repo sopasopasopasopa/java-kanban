@@ -1,5 +1,6 @@
 package com.javakanban.app.tests;
 
+import com.javakanban.app.manager.InMemoryHistoryManager;
 import com.javakanban.app.manager.InMemoryTaskManager;
 import com.javakanban.app.manager.Managers;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,6 @@ class ManagersTest {
 
     @Test
     void getDefaultHistoryShouldInitializeInMemoryHistoryManager() {
-        assertInstanceOf(InMemoryTaskManager.class, Managers.getDefaultHistory(), "");
+        assertInstanceOf(InMemoryHistoryManager.class, Managers.getDefaultHistory(), "");
     }
 }
