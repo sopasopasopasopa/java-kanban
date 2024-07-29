@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Последний коммит">
+    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Исправила методы обновления для каждого вида задач">
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/HistoryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryHistoryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryTaskManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/Managers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/tests/ManagersTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/tests/TaskManagerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-kanban.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-kanban.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/manager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/model/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/model/Epic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,12 +44,30 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Java projects/yandex practicum java/java-kanban"
+    "last_opened_file_path": "C:/java-kanban",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.javakanban.app.tests" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -100,15 +133,35 @@
       <option name="project" value="LOCAL" />
       <updated>1721552798642</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Исправила методы обновления для каждого вида задач">
+      <option name="closed" value="true" />
+      <created>1721667505849</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721667505849</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Реализовано:&#10;Получение списка всех задач.&#10; Удаление всех задач.&#10; Получение по идентификатору.&#10; Создание. Сам объект должен передаваться в качестве&#10; параметра." />
     <MESSAGE value="Реализовано Обновление статуса" />
     <MESSAGE value="Изменения:&#10;1) Перенесла enum статуса в директорию model&#10;2) Изменила метод создания всех типов задач&#10;3) Изменила методы удаления всех типов задач&#10;4) Добавила поле в классе Epic для хранения субтасков&#10;5) Переопределила методы equals и hashCode в классах Subtask и Task" />
     <MESSAGE value="Последний коммит" />
-    <option name="LAST_COMMIT_MESSAGE" value="Последний коммит" />
+    <MESSAGE value="Исправила методы обновления для каждого вида задач" />
+    <option name="LAST_COMMIT_MESSAGE" value="Исправила методы обновления для каждого вида задач" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

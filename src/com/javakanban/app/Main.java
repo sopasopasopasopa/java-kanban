@@ -1,6 +1,7 @@
 package com.javakanban.app;
 
 
+import com.javakanban.app.manager.Managers;
 import com.javakanban.app.manager.TaskManager;
 import com.javakanban.app.model.Task;
 import com.javakanban.app.model.Subtask;
@@ -12,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        TaskManager taskManager = new TaskManager();
+        TaskManager manager = Managers.getDefault();
 
         Task task1 =new Task("task1", "task number one");
         Task task2 =new Task("task2", "task number two");
@@ -23,56 +24,56 @@ public class Main {
         Subtask subtask3 = new Subtask("subtask3", "subtask number three", epic2.getTaskId());
 
 
-        taskManager.createTask(task1);
-        taskManager.createTask(task2);
-        taskManager.createEpic(epic1);
-        taskManager.createEpic(epic2);
-        taskManager.createSubtask(epic1, subtask1);
-        taskManager.createSubtask(epic1, subtask2);
-        taskManager.createSubtask(epic2, subtask3);
+        manager.createTask(task1);
+        manager.createTask(task2);
+        manager.createEpic(epic1);
+        manager.createEpic(epic2);
+        manager.createSubtask(epic1, subtask1);
+        manager.createSubtask(epic1, subtask2);
+        manager.createSubtask(epic2, subtask3);
 
 
         System.out.println("task");
-        System.out.println(taskManager.getAllTasks());
+        System.out.println(manager.getAllTasks());
         System.out.println("epic");
-        System.out.println(taskManager.getAllEpics());
+        System.out.println(manager.getAllEpics());
         System.out.println("subtask");
-        System.out.println(taskManager.getAllSubtasksForEpic(epic1));
-        System.out.println(taskManager.getAllSubtasksForEpic(epic2));
+        System.out.println(manager.getAllSubtasksForEpic(epic1));
+        System.out.println(manager.getAllSubtasksForEpic(epic2));
 
         task1.setStatus(Status.DONE);
 
         subtask1.setStatus(Status.DONE);
-        taskManager.updateStatusForEpics(epic1);
+        manager.updateStatusForEpics(epic1);
 
 
         System.out.println("");
         System.out.println("task");
-        System.out.println(taskManager.getAllTasks());
+        System.out.println(manager.getAllTasks());
         System.out.println("epic");
-        System.out.println(taskManager.getAllEpics());
+        System.out.println(manager.getAllEpics());
         System.out.println("subtask");
-        System.out.println(taskManager.getAllSubtasksForEpic(epic1));
-        System.out.println(taskManager.getAllSubtasksForEpic(epic2));
-        taskManager.updateStatusForEpics(epic1);
+        System.out.println(manager.getAllSubtasksForEpic(epic1));
+        System.out.println(manager.getAllSubtasksForEpic(epic2));
+        manager.updateStatusForEpics(epic1);
 
-        taskManager.removeEpicById(epic1.getTaskId());
+        manager.removeEpicById(epic1.getTaskId());
 
         System.out.println("");
         System.out.println("epic");
-        System.out.println(taskManager.getAllEpics());
+        System.out.println(manager.getAllEpics());
         System.out.println("subtask");
-        System.out.println(taskManager.getAllSubtasksForEpic(epic1));
-        System.out.println(taskManager.getAllSubtasksForEpic(epic2));
-        taskManager.updateStatusForEpics(epic1);
+        System.out.println(manager.getAllSubtasksForEpic(epic1));
+        System.out.println(manager.getAllSubtasksForEpic(epic2));
+        manager.updateStatusForEpics(epic1);
 
 
-        taskManager.removeTaskById(task1.getTaskId());
-        taskManager.removeSubtaskById(subtask1.getTaskId());
+        manager.removeTaskById(task1.getTaskId());
+        manager.removeSubtaskById(subtask1.getTaskId());
         System.out.println("");
         System.out.println("task");
-        System.out.println(taskManager.getAllTasks());
+        System.out.println(manager.getAllTasks());
         System.out.println("subtask");
-        System.out.println(taskManager.getAllSubtasksForEpic(epic1));
+        System.out.println(manager.getAllSubtasksForEpic(epic1));
     }
 }
