@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Исправила методы обновления для каждого вида задач">
-      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/HistoryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryHistoryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryTaskManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/Managers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/tests/ManagersTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/tests/TaskManagerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-kanban.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-kanban.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/manager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/TaskManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Добавила интерфейсы" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721667505849</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Добавила интерфейсы">
+      <option name="closed" value="true" />
+      <created>1722266052488</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1722266052488</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,7 +158,8 @@
     <MESSAGE value="Изменения:&#10;1) Перенесла enum статуса в директорию model&#10;2) Изменила метод создания всех типов задач&#10;3) Изменила методы удаления всех типов задач&#10;4) Добавила поле в классе Epic для хранения субтасков&#10;5) Переопределила методы equals и hashCode в классах Subtask и Task" />
     <MESSAGE value="Последний коммит" />
     <MESSAGE value="Исправила методы обновления для каждого вида задач" />
-    <option name="LAST_COMMIT_MESSAGE" value="Исправила методы обновления для каждого вида задач" />
+    <MESSAGE value="Добавила интерфейсы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавила интерфейсы" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
