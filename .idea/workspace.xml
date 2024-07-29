@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Добавила интерфейсы">
+    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryTaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/manager/TaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/model/Epic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/model/Epic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/model/Subtask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/model/Subtask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/model/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/tests/ManagersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/tests/ManagersTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/tests/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/tests/TaskTest.java" afterDir="false" />
     </list>
@@ -182,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722266253065</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз">
+      <option name="closed" value="true" />
+      <created>1722274960073</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1722274960073</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,7 +205,8 @@
     <MESSAGE value="Последний коммит" />
     <MESSAGE value="Исправила методы обновления для каждого вида задач" />
     <MESSAGE value="Добавила интерфейсы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавила интерфейсы" />
+    <MESSAGE value="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
