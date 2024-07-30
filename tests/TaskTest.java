@@ -1,9 +1,4 @@
-package com.javakanban.app.tests;
-
-import com.javakanban.app.manager.HistoryManager;
-import com.javakanban.app.manager.InMemoryHistoryManager;
-import com.javakanban.app.manager.Managers;
-import com.javakanban.app.manager.TaskManager;
+import com.javakanban.app.manager.*;
 import com.javakanban.app.model.Epic;
 import com.javakanban.app.model.Subtask;
 import com.javakanban.app.model.Task;
@@ -95,16 +90,17 @@ class TaskTest {
 
     @Test
     public void historyManagerPreservesPreviousTaskVersions() {
-        TaskManager manager = Managers.getDefault();
-        HistoryManager historyManager = new InMemoryHistoryManager();
+        TaskManager manager = new InMemoryTaskManager(new InMemoryHistoryManager());
         Task task1 = new Task(1, "task1", "task number one");
         manager.createTask(task1);
-        historyManager.addTask(task1);
-        List<Task> historyAfterFirstAdd = historyManager.getHistory();
-        Task task2 = new Task(1, "task1 updated", "updated description");
+        manager.getTaskById(1);
+        List<Task> historyAfterFirstAdd = manager.getHistory();
+
+        Task task2 = new Task(2, "task1 updated", "updated description");
         manager.createTask(task2);
-        historyManager.addTask(task2);
-        List<Task> historyAfterSecondAdd = historyManager.getHistory();
+        manager.getTaskById(2);
+        List<Task> historyAfterSecondAdd = manager.getHistory();
+
         assertEquals(task1, historyAfterSecondAdd.get(0), "Первая версия задачи должна быть сохранена в истории");
         assertEquals(task2, historyAfterSecondAdd.get(1), "Вторая версия задачи должна быть сохранена в истории");
     }

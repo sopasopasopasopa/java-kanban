@@ -1,5 +1,3 @@
-package com.javakanban.app.tests;
-
 import com.javakanban.app.manager.InMemoryHistoryManager;
 import com.javakanban.app.manager.InMemoryTaskManager;
 import com.javakanban.app.manager.Managers;

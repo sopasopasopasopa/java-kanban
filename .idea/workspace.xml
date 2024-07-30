@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз">
+    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="добавила messages в тесты&#10;реализовала остальные тесты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/tests/ManagersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/tests/ManagersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/tests/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/tests/TaskTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-kanban.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-kanban.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryTaskManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/tests/ManagersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/ManagersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/tests/TaskTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TaskTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,30 +36,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "JUnit.ManagersTest.executor": "Run",
-    "JUnit.TaskTest.executor": "Run",
-    "JUnit.TaskTest.subtaskEqualityById.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Java projects/yandex practicum java/java-kanban",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.ManagersTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TaskTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TaskTest.subtaskEqualityById.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Java projects/yandex practicum java/java-kanban&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -69,12 +74,12 @@
       <module name="java-kanban" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.javakanban.app.tests.*" />
+          <option name="PATTERN" value=".*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.javakanban.app.tests" />
-      <option name="MAIN_CLASS_NAME" value="com.javakanban.app.tests.TaskTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TaskTest" />
       <option name="METHOD_NAME" value="subtaskEqualityById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -184,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722274960073</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="добавила messages в тесты&#10;реализовала остальные тесты">
+      <option name="closed" value="true" />
+      <created>1722277592276</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1722277592276</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -206,7 +219,8 @@
     <MESSAGE value="Исправила методы обновления для каждого вида задач" />
     <MESSAGE value="Добавила интерфейсы" />
     <MESSAGE value="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз" />
+    <MESSAGE value="добавила messages в тесты&#10;реализовала остальные тесты" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавила messages в тесты&#10;реализовала остальные тесты" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
