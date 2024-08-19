@@ -66,6 +66,11 @@ public class InMemoryHistoryManager implements HistoryManager {
     }
 
     @Override
+    public List<Task> getHistory() {
+        return getTasks();
+    }
+
+    @Override
     public void addTask(Task task) {
         if (task != null) {
             if (taskMap.containsKey(task.getTaskId())) {
@@ -79,29 +84,13 @@ public class InMemoryHistoryManager implements HistoryManager {
             linkLast(task);
         }
     }
+
+    @Override
+    public void remove(int id) {
+        if (taskMap.containsKey(id)) {
+            removeNode(taskMap.get(id));
+        }
+    }
 }
-
-//    private final List<Task> list = new ArrayList<>();
-//    private static final int LIST_SIZE_FOR_HISTORY = 10;
-
-//    @Override
-//    public List<Task> getHistory() {
-//        return List.copyOf(list);
-//    }
-//
-//    @Override
-//    public void addTask(Task task) {
-//        if (task != null) {
-//            if (list.size() >= LIST_SIZE_FOR_HISTORY) {
-//                list.removeFirst();
-//            }
-//            list.add(task);
-//        }
-//    }
-//
-//    @Override
-//    public void remove(int id) {
-//
-//    }
 
 
