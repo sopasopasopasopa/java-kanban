@@ -91,7 +91,7 @@ class TaskTest {
     }
 
     @Test
-    public void tasksWithSameIdDoNotConflict() {
+    void tasksWithSameIdDoNotConflict() {
         TaskManager manager = Managers.getDefault();
 
         Task task1 = new Task(1, "task1", "task number one");
@@ -113,7 +113,7 @@ class TaskTest {
     }
 
     @Test
-    public void historyManagerPreservesPreviousTaskVersions() {
+    void historyManagerPreservesPreviousTaskVersions() {
         TaskManager manager = new InMemoryTaskManager(new InMemoryHistoryManager());
         Task task1 = new Task(1, "task1", "task number one");
         manager.createTask(task1);
@@ -198,6 +198,66 @@ class TaskTest {
         List<Task> history = historyManager.getHistory();
         assertEquals(10, history.size());
         assertEquals(new Task(5, "task 5", "task number 5"), history.getFirst());
+    }
+
+    @Test
+    void deletedSubtasksShouldNotStoreOldIDInsideThemselves() {
+        TaskManager manager = new InMemoryTaskManager(new InMemoryHistoryManager());
+        Subtask subtask1 = new Subtask(1, "subtask1", "subtask number one", 2);
+        Subtask subtask2 = new Subtask(2, "subtask2", "subtask number two", 2);
+
+        historyManager.addTask(subtask1);
+        historyManager.addTask(subtask2);
+
+        historyManager.remove(1);
+
+        assertNotEquals(1, subtask2.getTaskId());
+
+    }
+
+    @Test
+    void epicShouldNotContainInvalidSubtaskId() {
+        Epic epic1 = new Epic(1,"epic1", "epic number one");
+        Subtask subtask1 = new Subtask(1, "subtask1", "subtask number one", 1);
+        Subtask subtask2 = new Subtask(2, "subtask2", "subtask number two", 1);
+
+        historyManager.addTask(epic1);
+        historyManager.addTask(subtask1);
+        historyManager.addTask(subtask2);
+
+        historyManager.remove(1);
+
+        List<Integer> subtaskId = epic1.getSubtasksIds();
+        assertFalse(subtaskId.contains(1));
+    }
+
+    @Test
+    void testSetterUpdatesTaskFieldCorrectly() {
+        Task task1 = new Task(1, "task1", "task number one");
+
+        historyManager.addTask(task1);
+
+        task1.setNameTask("task update");
+        task1.setDescriptionTask("update task number one");
+
+        Task updatedTaskInManager = historyManager.getHistory().getFirst();
+
+        assertEquals("task update", updatedTaskInManager.getNameTask());
+        assertEquals("update task number one", updatedTaskInManager.getDescriptionTask());
+    }
+
+    @Test
+    void testSetterShouldNotAffectHistoryWhenTaskIsRemoved() {
+        Task task1 = new Task(1, "task1", "task number one");
+
+        historyManager.addTask(task1);
+
+        historyManager.remove(1);
+
+        task1.setNameTask("task should not affect history");
+
+        List<Task> history = historyManager.getHistory();
+        assertTrue(history.isEmpty());
     }
 
 }
