@@ -14,9 +14,53 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
     public FileBackedTaskManager(File file, HistoryManager historyManager) throws IOException {
         super(historyManager);
         this.file = file;
+        loadFromFile(file);
     }
 
-    void save() {
+    public FileBackedTaskManager(File file) {
+        super(new InMemoryHistoryManager());
+        this.file = file;
+    }
+
+    static FileBackedTaskManager loadFromFile(File file) throws IOException {
+        FileBackedTaskManager manager = new FileBackedTaskManager(file);
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+
+            String line;
+
+            while((line = reader.readLine()) != null) {
+                if (line.startsWith("TASK:")) {
+                    String[] parts = line.split(",");
+                    if (parts.length >= 3) {
+                        int id = Integer.parseInt(parts[0].substring(5));
+                        String name = parts[1];
+                        String description = parts[2];
+                        Task task = new Task(id, name, description);
+                        manager.tasks.put(id, task);
+                    } else if (line.startsWith("SUBTASK:")) {
+                        int id = Integer.parseInt(parts[0].substring(8));
+                        String name = parts[1];
+                        String description = parts[2];
+                        int epicId = Integer.parseInt(parts[3].substring(5));
+                        Subtask subtask = new Subtask(id, name, description, epicId);
+                        manager.subtasks.put(id, subtask);
+                    } else if (line.startsWith("EPIC:")) {
+                        int id = Integer.parseInt(parts[0].substring(5));
+                        String name = parts[1];
+                        String description = parts[2];
+                        Epic epic = new Epic(id, name, description);
+                        manager.epics.put(id, epic);
+
+                    }
+                }
+            }
+        } catch (IOException e) {
+            throw new IOException("Ошибка при загрузке файла!");
+        }
+        return manager;
+    }
+
+    public void save() throws ManagerSaveException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))){
             for (Task task : getAllTasks()) {
                 writer.write(taskToString(task));
@@ -34,7 +78,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
             }
 
         } catch (IOException e){
-            e.printStackTrace();
+            throw new ManagerSaveException("Ошибка при сохранении файла.");
         }
 
     }
@@ -55,7 +99,11 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
     public void createTask(Task task) {
         task.setTaskId(++id);
         tasks.put(task.getTaskId(), task);
-        save();
+        try {
+            save();
+        } catch (ManagerSaveException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -64,14 +112,22 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
         subtasks.put(subtask.getTaskId(), subtask);
         epic.addSubtask(subtask);
         updateStatusForEpics(epic);
-        save();
+        try {
+            save();
+        } catch (ManagerSaveException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void createEpic(Epic epic) {
         epic.setTaskId(++id);
         epics.put(epic.getTaskId(), epic);
-        save();
+        try {
+            save();
+        } catch (ManagerSaveException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
