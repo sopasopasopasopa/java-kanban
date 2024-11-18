@@ -1,5 +1,7 @@
 package com.javakanban.app.model;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Task {
@@ -8,6 +10,9 @@ public class Task {
     protected String descriptionTask;
     protected int taskId;
     protected Status status = Status.NEW;
+    protected Duration duration;
+    protected LocalDateTime startTime;
+    protected LocalDateTime endTime;
 
     public Task(int taskId, String nameTask, String descriptionTask) {
         this.taskId = taskId;
@@ -52,6 +57,37 @@ public class Task {
         this.status = status;
     }
 
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Duration duration) {
+        this.duration = duration;
+        updateEndTime();
+
+    }
+
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+        updateEndTime();
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    private void updateEndTime() {
+        if (startTime != null && duration != null) {
+            endTime = startTime.plus(duration);
+        } else {
+            endTime = null;
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,6 +108,9 @@ public class Task {
                 + ", description = " + descriptionTask
                 + ", taskId = " + taskId
                 + ", status = " + status
+                + ", duration=" + duration
+                + ", startTime=" + startTime
+                + ", endTime=" + endTime
                 + '}';
     }
 }
