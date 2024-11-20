@@ -1,6 +1,8 @@
 package com.javakanban.app.model;
 
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 public class Subtask extends Task {
@@ -11,8 +13,8 @@ public class Subtask extends Task {
         this.setEpicId(epicId);
     }
 
-    public Subtask(int taskId, String nameTask, String descriptionTask, int epicId) {
-        super(nameTask, descriptionTask);
+    public Subtask(int taskId, String nameTask, String descriptionTask, Duration duration, LocalDateTime startTime, int epicId) {
+        super(taskId, nameTask, descriptionTask, duration, startTime);
         this.setEpicId(epicId);
     }
 

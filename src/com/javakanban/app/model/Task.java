@@ -13,15 +13,24 @@ public class Task {
     protected Duration duration;
     protected LocalDateTime startTime;
 
-    public Task(int taskId, String nameTask, String descriptionTask) {
+    public Task(int taskId, String nameTask, String descriptionTask, Duration duration, LocalDateTime startTime) {
         this.taskId = taskId;
         this.nameTask = nameTask;
         this.descriptionTask = descriptionTask;
+        this.duration = duration;
+        this.startTime = startTime;
+
     }
 
     public Task(String nameTask, String descriptionTask) {
         this.nameTask = nameTask;
         this.descriptionTask = descriptionTask;
+    }
+
+    public Task(String nameTask, String descriptionTask, int taskId) {
+        this.nameTask = nameTask;
+        this.descriptionTask = descriptionTask;
+        this.taskId = taskId;
     }
 
     public void setTaskId(int taskId) {
