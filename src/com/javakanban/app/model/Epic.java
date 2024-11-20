@@ -12,9 +12,10 @@ public class Epic extends Task {
         super(nameTask, descriptionTask);
     }
 
-    public Epic(int taskId, String nameTask, String descriptionTask) {
-        super(taskId, nameTask, descriptionTask);
+    public Epic(int taskId, String nameTask, String descriptionTask, Duration duration, LocalDateTime startTime) {
+        super(taskId, nameTask, descriptionTask, duration, startTime);
     }
+
     public void addSubtask(Subtask subtask) {
         subtaskArrayList.add(subtask);
         updateEpicDetails();
@@ -55,6 +56,7 @@ public class Epic extends Task {
         if (subtaskArrayList.isEmpty()) {
             this.startTime = null;
             this.duration = Duration.ZERO;
+            this.endTime = null;
             return;
         }
 
@@ -67,14 +69,12 @@ public class Epic extends Task {
             if (subtask.getStartTime() != null) {
                 earliestStart = earliestStart.isBefore(subtask.getStartTime()) ? earliestStart : subtask.getStartTime();
             }
-            if (subtask.getEndTime() != null) {
-                latestEnd = latestEnd.isAfter(subtask.getEndTime()) ? latestEnd : subtask.getEndTime();
-            }
-            totalDuration = totalDuration.plus(subtask.getDuration());
+            totalDuration = totalDuration.plus(subtask.getDuration() == null ? Duration.ZERO : subtask.getDuration());
         }
 
-        this.startTime = earliestStart;
+        this.startTime = earliestStart == LocalDateTime.MAX ? null : earliestStart;
         this.duration = totalDuration;
+        this.endTime = (startTime != null && duration != null) ? startTime.plus(duration) : null;
 
         if (startTime != null && duration != null) {
             this.endTime = startTime.plus(duration);
