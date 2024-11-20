@@ -3,6 +3,9 @@ import com.javakanban.app.model.*;
 import org.junit.jupiter.api.Test;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.time.Duration;
+import java.time.LocalDateTime;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -41,8 +44,14 @@ class ManagersTest {
 
         FileBackedTaskManager taskManager = new FileBackedTaskManager(tempFile);
 
-        Task task1 = new Task(1, "task1", "task number one");
-        Task task2 = new Task(2, "task2", "task number two");
+        LocalDateTime startTime1 = LocalDateTime.of(2024, 3, 10, 10, 0);
+        Duration duration1 = Duration.ofHours(2);
+
+        LocalDateTime startTime2 = LocalDateTime.of(2024, 3, 11, 12, 0);
+        Duration duration2 = Duration.ofMinutes(30);
+
+        Task task1 = new Task(1, "task1", "task number one", duration1, startTime1);
+        Task task2 = new Task(2, "task2", "task number two", duration2, startTime2);
 
         taskManager.createTask(task1);
         taskManager.createTask(task2);
@@ -74,9 +83,18 @@ class ManagersTest {
 
         FileBackedTaskManager taskManager = FileBackedTaskManager.loadFromFile(tempFile);
 
-        Task task1 = new Task(1, "task1", "task number one");
-        Epic epic1 = new Epic(2,"epic1","epic number one");
-        Subtask subtask1 = new Subtask(3,"suptask1", "subtask number one", 2);
+        LocalDateTime startTime1 = LocalDateTime.of(2024, 3, 10, 10, 0);
+        Duration duration1 = Duration.ofHours(2);
+
+        LocalDateTime startTime2 = LocalDateTime.of(2024, 3, 11, 12, 0);
+        Duration duration2 = Duration.ofMinutes(30);
+        LocalDateTime startTime3 = LocalDateTime.of(2024, 3, 12, 14, 0);
+        Duration duration3 = Duration.ofMinutes(45);
+
+
+        Task task1 = new Task(1, "task1", "task number one", duration1, startTime1);
+        Epic epic1 = new Epic(2,"epic1","epic number one", duration2, startTime2);
+        Subtask subtask1 = new Subtask(3,"suptask1", "subtask number one", duration3, startTime3, 2);
 
         taskManager.createTask(task1);
         taskManager.createEpic(epic1);
@@ -86,7 +104,7 @@ class ManagersTest {
         assertEquals(1, taskManager.getAllEpics().size());
         assertEquals(1, taskManager.getAllSubtasks().size());
 
-
     }
+
 
 }
