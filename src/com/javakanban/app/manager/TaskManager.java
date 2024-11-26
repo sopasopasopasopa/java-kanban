@@ -14,7 +14,7 @@ public interface TaskManager {
     HashMap<Integer, Epic> epics = new HashMap<>();
     HashMap<Integer, Subtask> subtasks = new HashMap<>();
 
-    public List<Task> getPrioritizedTasks();
+    List<Task> getPrioritizedTasks();
 
     Task getTaskById(int taskId);
 
