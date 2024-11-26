@@ -24,4 +24,8 @@ public abstract class BaseHttpHandler implements HttpHandler {
     protected void sendHasInteractions(HttpExchange exchange) throws IOException {
         sendText(exchange, "Задача пересекается с уже существующими", 406);
     }
+
+    protected void sendMethodNotAllowed(HttpExchange exchange) throws IOException {
+        sendText(exchange, "Метод не поддерживается", 405);
+    }
 }
