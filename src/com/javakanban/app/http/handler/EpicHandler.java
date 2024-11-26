@@ -1,32 +1,22 @@
 package com.javakanban.app.http.handler;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.javakanban.app.adapter.DurationAdapter;
-import com.javakanban.app.adapter.LocalDateTimeAdapter;
 import com.javakanban.app.manager.TaskManager;
 import com.javakanban.app.model.Epic;
+import com.javakanban.app.util.GsonUtil;
 import com.sun.net.httpserver.HttpExchange;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class EpicHandler extends BaseHttpHandler {
-    private final Gson gson;
     private final TaskManager taskManager;
 
     public EpicHandler(TaskManager taskManager) {
         this.taskManager = taskManager;
-        this.gson = new GsonBuilder()
-                .registerTypeAdapter(Duration.class, new DurationAdapter())
-                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
-                .create();
     }
 
     @Override
@@ -42,7 +32,7 @@ public class EpicHandler extends BaseHttpHandler {
                 handleDeleteEpic(exchange);
                 break;
             default:
-                sendNotFound(exchange);
+                sendMethodNotAllowed(exchange);
         }
     }
 
@@ -52,14 +42,14 @@ public class EpicHandler extends BaseHttpHandler {
             int id = Integer.parseInt(query.substring(3));
             Epic epic = taskManager.getEpicById(id);
             if (epic != null) {
-                String response = gson.toJson(epic);
+                String response = GsonUtil.getGson().toJson(epic);
                 sendText(exchange, response, 200);
             } else {
                 sendNotFound(exchange);
             }
         } else {
             List<Epic> epics = taskManager.getAllEpics();
-            String response = gson.toJson(epics);
+            String response = GsonUtil.getGson().toJson(epics);
             sendText(exchange, response, 200);
         }
     }
@@ -68,14 +58,14 @@ public class EpicHandler extends BaseHttpHandler {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(exchange.getRequestBody(),
                 StandardCharsets.UTF_8))) {
             String json = reader.lines().collect(Collectors.joining());
-            Epic epic = gson.fromJson(json, Epic.class);
+            Epic epic = GsonUtil.getGson().fromJson(json, Epic.class);
 
             if (epic.getTaskId() > 0) {
                 taskManager.updateEpic(epic);
-                sendText(exchange, gson.toJson(epic), 200);
+                sendText(exchange, GsonUtil.getGson().toJson(epic), 200);
             } else {
                 int id = taskManager.createEpic(epic);
-                sendText(exchange, gson.toJson(epic), 201);
+                sendText(exchange, GsonUtil.getGson().toJson(epic), 201);
             }
         } catch (Exception e) {
             sendText(exchange, "Internal Server Error", 500);

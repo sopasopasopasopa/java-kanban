@@ -1,33 +1,23 @@
 package com.javakanban.app.http.handler;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.javakanban.app.adapter.DurationAdapter;
-import com.javakanban.app.adapter.LocalDateTimeAdapter;
 import com.javakanban.app.manager.ManagerException;
 import com.javakanban.app.manager.TaskManager;
 import com.javakanban.app.model.Task;
+import com.javakanban.app.util.GsonUtil;
 import com.sun.net.httpserver.HttpExchange;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class TaskHandler extends BaseHttpHandler {
-    private final Gson gson;
     private final TaskManager taskManager;
 
     public TaskHandler(TaskManager taskManager) {
         this.taskManager = taskManager;
-        this.gson = new GsonBuilder()
-                .registerTypeAdapter(Duration.class, new DurationAdapter())
-                .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
-                .create();
     }
 
     @Override
@@ -43,7 +33,7 @@ public class TaskHandler extends BaseHttpHandler {
                 handleDeleteTask(exchange);
                 break;
             default:
-                sendNotFound(exchange);
+                sendMethodNotAllowed(exchange);
         }
     }
 
@@ -54,14 +44,14 @@ public class TaskHandler extends BaseHttpHandler {
             int id = Integer.parseInt(query.substring(3));
             task = taskManager.getTaskById(id);
             if (task != null) {
-                String response = gson.toJson(task);
+                String response = GsonUtil.getGson().toJson(task);
                 sendText(exchange, response, 200);
             } else {
                 sendNotFound(exchange);
             }
         } else {
             List<Task> tasks = taskManager.getAllTasks();
-            String response = gson.toJson(tasks);
+            String response = GsonUtil.getGson().toJson(tasks);
             sendText(exchange, response, 200);
         }
     }
@@ -70,15 +60,15 @@ public class TaskHandler extends BaseHttpHandler {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(exchange.getRequestBody(),
                 StandardCharsets.UTF_8))) {
             String json = reader.lines().collect(Collectors.joining());
-            Task task = gson.fromJson(json, Task.class);
+            Task task = GsonUtil.getGson().fromJson(json, Task.class);
 
             if (task.getTaskId() > 0) {
                 taskManager.updateTask(task);
-                sendText(exchange, gson.toJson(task), 200);
+                sendText(exchange, GsonUtil.getGson().toJson(task), 200);
             } else {
                 try {
                     int id = taskManager.createTask(task);
-                    sendText(exchange, gson.toJson(task), 201);
+                    sendText(exchange, GsonUtil.getGson().toJson(task), 201);
                 } catch (ManagerException e) {
                     sendHasInteractions(exchange);
                 }
