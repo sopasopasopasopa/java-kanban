@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="добавила конструктор InMemoryTaskManager" />
+    <list default="true" id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="Сделать возвращаемое значение(параметр id) ля методов создания разных типов задач">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/http/HttpTaskServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/http/handler/HistoryHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/http/handler/PrioritizedHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/ManagerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/HttpTaskServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-kanban.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-kanban.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryTaskManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javakanban/app/manager/InMemoryTaskManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,68 +27,180 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="sprint_6-solution" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="sprint_8-solution-time-add-duration" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/com/javakanban/app/manager/HistoryManager.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/test-file.txt" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="2jSA55F7ACAsC8OOrSdaSaKe4TH" />
+  <component name="ProjectId" id="2ksSz69fh6vweDCyNA8fZgQkQyd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;JUnit.ManagersTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TaskTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TaskTest.subtaskEqualityById.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Java projects/yandex practicum java/java-kanban&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.EpicTests.testAllSubtasksDone.executor": "Run",
+    "JUnit.EpicTests.testAllSubtasksInProgress.executor": "Run",
+    "JUnit.EpicTests.testAllSubtasksNew.executor": "Run",
+    "JUnit.EpicTests.testEmptyEpic.executor": "Run",
+    "JUnit.EpicTests.testMixedSubtasksNewAndDone.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.testCreateEpic_SaveException.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.testCreateSubtask_SaveException.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.testCreateTask_SaveException.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.testCreateTask_Success.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.testLoadFromFileIOException.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.testLoadFromFile_IOException.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.testSaveIOException.executor": "Run",
+    "JUnit.FileBackedTaskManagerTest.testSave_IOException.executor": "Run",
+    "JUnit.HttpTaskManagerTasksTest.testAddTask.executor": "Run",
+    "JUnit.HttpTaskServerTest.executor": "Run",
+    "JUnit.HttpTaskServerTest.testAddTask.executor": "Run",
+    "JUnit.HttpTaskServerTest.testCreateTask.executor": "Run",
+    "JUnit.HttpTaskServerTest.testDeleteTask.executor": "Run",
+    "JUnit.HttpTaskServerTest.testDeleteTaskNotFound.executor": "Run",
+    "JUnit.HttpTaskServerTest.testGetAllTasks.executor": "Run",
+    "JUnit.HttpTaskServerTest.testGetHistory.executor": "Run",
+    "JUnit.HttpTaskServerTest.testGetHistoryEmpty.executor": "Run",
+    "JUnit.HttpTaskServerTest.testGetPrioritizedTasks.executor": "Run",
+    "JUnit.HttpTaskServerTest.testGetPrioritizedTasksEmpty.executor": "Run",
+    "JUnit.HttpTaskServerTest.testGetTaskById.executor": "Debug",
+    "JUnit.HttpTaskServerTest.testGetTaskByIdNotFound.executor": "Run",
+    "JUnit.InMemoryHistoryManagerTest.testAddTaskDuplicates.executor": "Run",
+    "JUnit.InMemoryHistoryManagerTest.testAddTaskMaxSize.executor": "Run",
+    "JUnit.InMemoryHistoryManagerTest.testGetHistoryEmpty.executor": "Run",
+    "JUnit.InMemoryHistoryManagerTest.testRemoveBeginning.executor": "Run",
+    "JUnit.InMemoryHistoryManagerTest.testRemoveEnd.executor": "Run",
+    "JUnit.InMemoryHistoryManagerTest.testRemoveMiddle.executor": "Run",
+    "JUnit.InMemoryHistoryManagerTest.testRemoveNonExistent.executor": "Run",
+    "JUnit.InMemoryTaskManagerTest.testHasOverlappingTasksNoOverlap.executor": "Run",
+    "JUnit.InMemoryTaskManagerTest.testHasOverlappingTasksOverlap.executor": "Run",
+    "JUnit.InMemoryTaskManagerTest.testIsOverlapOverlap.executor": "Run",
+    "JUnit.InMemoryTaskManagerTest.testIsOverlapTouching.executor": "Run",
+    "JUnit.InMemoryTaskManagerTest.testIsOverlap_noOverlap.executor": "Run",
+    "JUnit.InMemoryTaskManagerTest.testIsOverlap_nullValues.executor": "Run",
+    "JUnit.ManagersTest.getDefaultHistoryShouldInitializeInMemoryHistoryManager.executor": "Run",
+    "JUnit.ManagersTest.getDefaultShouldInitializeInMemoryTaskManager.executor": "Run",
+    "JUnit.ManagersTest.testLoadEmptyFile.executor": "Run",
+    "JUnit.ManagersTest.testLoadFromFileCorrectFile.executor": "Run",
+    "JUnit.ManagersTest.testLoadMultipleTasks.executor": "Run",
+    "JUnit.ManagersTest.testSaveEmptyFile.executor": "Run",
+    "JUnit.ManagersTest.testSaveMultipleTasks.executor": "Run",
+    "JUnit.TaskHandlerTest.testCreateTask.executor": "Run",
+    "JUnit.TaskHandlerTest.testGetTasks.executor": "Run",
+    "JUnit.TaskManagerTest.executor": "Run",
+    "JUnit.TaskManagerTest.testGetEpicById.executor": "Run",
+    "JUnit.TaskManagerTest.testGetTaskById.executor": "Coverage",
+    "JUnit.TaskServerTest.testBasicConnection.executor": "Run",
+    "JUnit.TaskServerTest.testCreateTask.executor": "Run",
+    "JUnit.TaskServerTest.testGetTasks.executor": "Run",
+    "JUnit.TaskTest,historyManagerPreservesPreviousTaskVersions and 1 more.executor": "Run",
+    "JUnit.TaskTest.deletedSubtasksShouldNotStoreOldIDInsideThemselves.executor": "Run",
+    "JUnit.TaskTest.epicShouldNotContainInvalidSubtaskId.executor": "Run",
+    "JUnit.TaskTest.executor": "Run",
+    "JUnit.TaskTest.historyManagerPreservesPreviousTaskVersions.executor": "Run",
+    "JUnit.TaskTest.inMemoryTaskManagerAddsDifferentTaskTypes.executor": "Run",
+    "JUnit.TaskTest.taskUpdateShouldReflectInHistory.executor": "Run",
+    "JUnit.TaskTest.tasksWithSameIdDoNotConflict.executor": "Run",
+    "JUnit.TaskTest.testAddDublicateTask.executor": "Run",
+    "JUnit.TaskTest.testAddTask.executor": "Run",
+    "JUnit.TaskTest.testHistoryLimit.executor": "Run",
+    "JUnit.TaskTest.testRemoveNonExistenTask.executor": "Run",
+    "JUnit.TaskTest.testRemoveTask.executor": "Run",
+    "JUnit.TaskTest.testSetterShouldNotAffectHistoryWhenTaskIsRemoved.executor": "Run",
+    "JUnit.TaskTest.testSetterUpdatesTaskFieldCorrectly.executor": "Run",
+    "JUnit.TaskTest.testVersionLinkedList.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "sprint__9-solution-http-api",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Java projects/yandex practicum java/5 sprint/m1-t25-api/lib",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.javakanban.app.tests" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration name="TaskTest.subtaskEqualityById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager" selected="JUnit.HttpTaskServerTest">
+    <configuration name="HttpTaskServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="java-kanban" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="TaskTest" />
-      <option name="METHOD_NAME" value="subtaskEqualityById" />
+      <option name="MAIN_CLASS_NAME" value="HttpTaskServerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskServerTest.testGetHistory" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="testGetHistory" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskServerTest.testGetHistoryEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="testGetHistoryEmpty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskServerTest.testGetPrioritizedTasks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="testGetPrioritizedTasks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HttpTaskServerTest.testGetPrioritizedTasksEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="java-kanban" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="HttpTaskServerTest" />
+      <option name="METHOD_NAME" value="testGetPrioritizedTasksEmpty" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,157 +208,351 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TaskTest.subtaskEqualityById" />
+        <item itemvalue="JUnit.HttpTaskServerTest" />
+        <item itemvalue="JUnit.HttpTaskServerTest.testGetPrioritizedTasks" />
+        <item itemvalue="JUnit.HttpTaskServerTest.testGetPrioritizedTasksEmpty" />
+        <item itemvalue="JUnit.HttpTaskServerTest.testGetHistoryEmpty" />
+        <item itemvalue="JUnit.HttpTaskServerTest.testGetHistory" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="" />
-      <created>1721369918101</created>
+      <changelist id="8cf9421d-b894-441b-8a43-f081cca8f0a5" name="Changes" comment="добавила конструктор InMemoryTaskManager" />
+      <created>1724071052669</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1721369918101</updated>
+      <updated>1724071052669</updated>
     </task>
-    <task id="LOCAL-00001" summary="Реализовано:&#10;Получение списка всех задач.&#10; Удаление всех задач.&#10; Получение по идентификатору.&#10; Создание. Сам объект должен передаваться в качестве&#10; параметра.">
+    <task id="LOCAL-00001" summary="Добавить свою реализацию двусвязного списка, отдельный класс Node для узла списка.&#10;Добавить метод удаления узла списка (removeNode). &#10;Добавить реализацию метода addTask.&#10;Добавить метод упаковки всех задач из дыусвязного списка в обычный `ArrayList` (getTasks) и вывод того спискаю">
       <option name="closed" value="true" />
-      <created>1721370214555</created>
+      <created>1724075071419</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1721370214555</updated>
+      <updated>1724075071419</updated>
     </task>
-    <task id="LOCAL-00002" summary="Реализовано Обновление статуса">
+    <task id="LOCAL-00002" summary="Добавить метод для удаления одной подзадачи эпика.">
       <option name="closed" value="true" />
-      <created>1721370574362</created>
+      <created>1724086235378</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1721370574362</updated>
+      <updated>1724086235378</updated>
     </task>
-    <task id="LOCAL-00003" summary="Реализовано Обновление статуса">
+    <task id="LOCAL-00003" summary="Сделать новую реализацию метода getHistory(). Он должен возвращать задачи из двусвязного списка.&#10;Добавить реализацию метода remove(int id), он должен удалять задачу по id из taskMap">
       <option name="closed" value="true" />
-      <created>1721375448861</created>
+      <created>1724086554347</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1721375448861</updated>
+      <updated>1724086554347</updated>
     </task>
-    <task id="LOCAL-00004" summary="Изменения:&#10;1) Перенесла enum статуса в директорию model&#10;2) Изменила метод создания всех типов задач&#10;3) Изменила методы удаления всех типов задач&#10;4) Добавила поле в классе Epic для хранения субтасков&#10;5) Переопределила методы equals и hashCode в классах Subtask и Task">
+    <task id="LOCAL-00004" summary="Протестировать корректность работы со связанным списком версий.&#10;Протестировать целостность данных при добавлении и удалении задач.">
       <option name="closed" value="true" />
-      <created>1721414085290</created>
+      <created>1724086792807</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1721414085290</updated>
+      <updated>1724086792807</updated>
     </task>
-    <task id="LOCAL-00005" summary="Последний коммит">
+    <task id="LOCAL-00005" summary="Добавить тест, который проверяет, что задачи добавляются в историю корректно (testAddTask()).&#10;Добавить тест, который проверяет как менеджер историй обрабатывает добавление дубликатов (testAddDuplicateTask()). &#10;Добавить тест, который проверяет, что задача может быть удалена из истории (testRemoveTask()).&#10;Добавить тест, который проверяет, что попытка удаления несуществующей задачи не влияет на историю (testRemoveNonExistentTask()).&#10;Добавить тест, который проверяет, что история ограничена определённым количеством задач (testHistoryLimit()).">
       <option name="closed" value="true" />
-      <created>1721465572234</created>
+      <created>1724329478267</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1721465572234</updated>
+      <updated>1724329478267</updated>
     </task>
-    <task id="LOCAL-00006" summary="Последний коммит">
+    <task id="LOCAL-00006" summary="Изменить методы получения задач(для каждого типа задач)">
       <option name="closed" value="true" />
-      <created>1721542626267</created>
+      <created>1724332904261</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1721542626267</updated>
+      <updated>1724332904261</updated>
     </task>
-    <task id="LOCAL-00007" summary="Последний коммит">
+    <task id="LOCAL-00007" summary="Внести изменения в старые тесты.">
       <option name="closed" value="true" />
-      <created>1721552798642</created>
+      <created>1724332950311</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1721552798642</updated>
+      <updated>1724332950311</updated>
     </task>
-    <task id="LOCAL-00008" summary="Исправила методы обновления для каждого вида задач">
+    <task id="LOCAL-00008" summary="Добавить тест, который проверяет, что после удаления подзадачи ID не остаётся в других подзадачах (deletedSubtasksShouldNotStoreOldIDInsideThemselves()).&#10;Добавит тест, который проверяет, что после удаления подзадачи эпик больше не содержит её ID(epicShouldNotContainInvalidSubtaskId()).&#10;Добавить тест, который проверяет, что изменения полей задачи через сеттеры корректно отображаются в менеджере (testSetterUpdatesTaskFieldCorrectly()).&#10;Добавить тест, который проверяет, что изменения в удалённой задаче не влияют на историю задач (testSetterShouldNotAffectHistoryWhenTaskIsRemoved()).">
       <option name="closed" value="true" />
-      <created>1721667505849</created>
+      <created>1724406616358</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1721667505849</updated>
+      <updated>1724406616358</updated>
     </task>
-    <task id="LOCAL-00009" summary="Добавила интерфейсы">
+    <task id="LOCAL-00009" summary="Написать метод, который должен возвращать список ID подзадач эпика.">
       <option name="closed" value="true" />
-      <created>1722266052488</created>
+      <created>1724406693727</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1722266052488</updated>
+      <updated>1724406693727</updated>
     </task>
-    <task id="LOCAL-00010" summary="Добавила интерфейсы">
+    <task id="LOCAL-00010" summary="Расположить вложенный класс в конце основного.">
       <option name="closed" value="true" />
-      <created>1722266253065</created>
+      <created>1724778602144</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1722266253065</updated>
+      <updated>1724778602144</updated>
     </task>
-    <task id="LOCAL-00011" summary="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз">
+    <task id="LOCAL-00011" summary="Поменять модификаторы доступа у ХешТаблиц.">
       <option name="closed" value="true" />
-      <created>1722274960073</created>
+      <created>1727270463122</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1722274960073</updated>
+      <updated>1727270463122</updated>
     </task>
-    <task id="LOCAL-00012" summary="добавила messages в тесты&#10;реализовала остальные тесты">
+    <task id="LOCAL-00012" summary="Создать новый класс FileBackedTaskManager, который будет наследником InMemoryTaskManager.&#10;Создать конструктор.&#10;Реализовать методы превращающие задачи в строку.&#10;Реализовать метод сохранения в файл.&#10;Переопределить методы создания задач.">
       <option name="closed" value="true" />
-      <created>1722277592276</created>
+      <created>1727270695865</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1722277592276</updated>
+      <updated>1727270695865</updated>
     </task>
-    <task id="LOCAL-00013" summary="добавила конструктор InMemoryTaskManager">
+    <task id="LOCAL-00013" summary="Создать новый конструктор для FileBackedTaskManager&#10;&#10;Создать метод loadFromFile, который будет восстанавливать данные менеджера из файла при запуске программы.">
       <option name="closed" value="true" />
-      <created>1722345232432</created>
+      <created>1728119706290</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1722345232432</updated>
+      <updated>1728119706290</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Создать своё исключение ManagerSaveException">
+      <option name="closed" value="true" />
+      <created>1728418464784</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728418464784</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Исправить метод загрузки из файла (loadFromFile)">
+      <option name="closed" value="true" />
+      <created>1728821044377</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1728821044377</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Добавить тесты: &#10;сохранение и загрузку пустого файла;&#10;сохранение нескольких задач;&#10;загрузку нескольких задач.">
+      <option name="closed" value="true" />
+      <created>1728821183784</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1728821183784</updated>
+    </task>
+    <task id="LOCAL-00017" summary="добавить новые поля protected Duration duration; protected LocalDateTime startTime; protected LocalDateTime endTime;&#10;добавить геттеры и сеттеры для новых полей.&#10;добавить новый метод private void updateEndTime(), для обновления времени завершения задачи">
+      <option name="closed" value="true" />
+      <created>1731930657624</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1731930657624</updated>
+    </task>
+    <task id="LOCAL-00018" summary="удалить метод updateEndTime()&#10;переписать метод getEndTime()">
+      <option name="closed" value="true" />
+      <created>1731933243493</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1731933243493</updated>
+    </task>
+    <task id="LOCAL-00019" summary="исправить метод toString()">
+      <option name="closed" value="true" />
+      <created>1731933294179</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1731933294179</updated>
+    </task>
+    <task id="LOCAL-00020" summary="изменить метод getEndTime()">
+      <option name="closed" value="true" />
+      <created>1731934290589</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1731934290589</updated>
+    </task>
+    <task id="LOCAL-00021" summary="добавить в конструктор новые поля">
+      <option name="closed" value="true" />
+      <created>1732111072533</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111072533</updated>
+    </task>
+    <task id="LOCAL-00022" summary="написать тесты для расчёта статуса Epic.">
+      <option name="closed" value="true" />
+      <created>1732111161138</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111161138</updated>
+    </task>
+    <task id="LOCAL-00023" summary="добавить новые поля в методы загрузки из файла и сохранения в файл">
+      <option name="closed" value="true" />
+      <created>1732111226764</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111226764</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Сделать корректный перехват исключений при работе с файлами">
+      <option name="closed" value="true" />
+      <created>1732111284204</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111284204</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Написать тесты для всех методов интерфейса HistoryManager">
+      <option name="closed" value="true" />
+      <created>1732111425953</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111425953</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Реализовать методы проверки пересечения по времени задач">
+      <option name="closed" value="true" />
+      <created>1732111511044</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111511044</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Добавить тест на корректность расчёта пересечения интервалов.">
+      <option name="closed" value="true" />
+      <created>1732111559393</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111559393</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Добавить новые поля в создание объекта">
+      <option name="closed" value="true" />
+      <created>1732111612048</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111612048</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Добавить новые поля в тесты для избежания ошибок.">
+      <option name="closed" value="true" />
+      <created>1732111651686</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111651686</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Добавить новые поля в конструктор.">
+      <option name="closed" value="true" />
+      <created>1732111685257</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111685257</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Создать базовый класс с тестами на каждый метод из интерфейса TaskManager">
+      <option name="closed" value="true" />
+      <created>1732111750729</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111750729</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Добавить новые поля в тесты.">
+      <option name="closed" value="true" />
+      <created>1732111782006</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1732111782006</updated>
+    </task>
+    <task id="LOCAL-00033" summary="создать абстрактный класс BaseHttpHandler с методами sendText,sendNotFound,sendHasInteractions">
+      <option name="closed" value="true" />
+      <created>1732538763185</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1732538763186</updated>
+    </task>
+    <task id="LOCAL-00034" summary="создать LocalDateTimeAdapter, DurationAdapter, чтобы контролировать процесс сериализации и десериализации">
+      <option name="closed" value="true" />
+      <created>1732538941405</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1732538941405</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Создать TaskHandler, SubtaskHandler, EpicHandler, обработчики для трёх типов задач">
+      <option name="closed" value="true" />
+      <created>1732539118992</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1732539118992</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Сделать возвращаемое значение(параметр id) ля методов создания разных типов задач">
+      <option name="closed" value="true" />
+      <created>1732539199552</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1732539199552</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Сделать возвращаемое значение(параметр id) ля методов создания разных типов задач">
+      <option name="closed" value="true" />
+      <created>1732539214680</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1732539214680</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Реализовано:&#10;Получение списка всех задач.&#10; Удаление всех задач.&#10; Получение по идентификатору.&#10; Создание. Сам объект должен передаваться в качестве&#10; параметра." />
-    <MESSAGE value="Реализовано Обновление статуса" />
-    <MESSAGE value="Изменения:&#10;1) Перенесла enum статуса в директорию model&#10;2) Изменила метод создания всех типов задач&#10;3) Изменила методы удаления всех типов задач&#10;4) Добавила поле в классе Epic для хранения субтасков&#10;5) Переопределила методы equals и hashCode в классах Subtask и Task" />
-    <MESSAGE value="Последний коммит" />
-    <MESSAGE value="Исправила методы обновления для каждого вида задач" />
-    <MESSAGE value="Добавила интерфейсы" />
-    <MESSAGE value="Добавила новые конструкторы для того чтобы задавать соё Id&#10;Добавила метод для вывода всех подзадач&#10;Создала задачи основываясь на новых конструкторах&#10;добавила несколько тестов из тз" />
-    <MESSAGE value="добавила messages в тесты&#10;реализовала остальные тесты" />
-    <MESSAGE value="добавила конструктор InMemoryTaskManager" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавила конструктор InMemoryTaskManager" />
+    <MESSAGE value="Создать новый класс FileBackedTaskManager, который будет наследником InMemoryTaskManager.&#10;Создать конструктор.&#10;Реализовать методы превращающие задачи в строку.&#10;Реализовать метод сохранения в файл.&#10;Переопределить методы создания задач." />
+    <MESSAGE value="Создать новый конструктор для FileBackedTaskManager&#10;&#10;Создать метод loadFromFile, который будет восстанавливать данные менеджера из файла при запуске программы." />
+    <MESSAGE value="Создать своё исключение ManagerSaveException" />
+    <MESSAGE value="Исправить метод загрузки из файла (loadFromFile)" />
+    <MESSAGE value="Добавить тесты: &#10;сохранение и загрузку пустого файла;&#10;сохранение нескольких задач;&#10;загрузку нескольких задач." />
+    <MESSAGE value="добавить новые поля protected Duration duration; protected LocalDateTime startTime; protected LocalDateTime endTime;&#10;добавить геттеры и сеттеры для новых полей.&#10;добавить новый метод private void updateEndTime(), для обновления времени завершения задачи" />
+    <MESSAGE value="удалить метод updateEndTime()&#10;переписать метод getEndTime()" />
+    <MESSAGE value="исправить метод toString()" />
+    <MESSAGE value="изменить метод getEndTime()" />
+    <MESSAGE value="добавить в конструктор новые поля" />
+    <MESSAGE value="написать тесты для расчёта статуса Epic." />
+    <MESSAGE value="добавить новые поля в методы загрузки из файла и сохранения в файл" />
+    <MESSAGE value="Сделать корректный перехват исключений при работе с файлами" />
+    <MESSAGE value="Написать тесты для всех методов интерфейса HistoryManager" />
+    <MESSAGE value="Реализовать методы проверки пересечения по времени задач" />
+    <MESSAGE value="Добавить тест на корректность расчёта пересечения интервалов." />
+    <MESSAGE value="Добавить новые поля в создание объекта" />
+    <MESSAGE value="Добавить новые поля в тесты для избежания ошибок." />
+    <MESSAGE value="Добавить новые поля в конструктор." />
+    <MESSAGE value="Создать базовый класс с тестами на каждый метод из интерфейса TaskManager" />
+    <MESSAGE value="Добавить новые поля в тесты." />
+    <MESSAGE value="создать абстрактный класс BaseHttpHandler с методами sendText,sendNotFound,sendHasInteractions" />
+    <MESSAGE value="создать LocalDateTimeAdapter, DurationAdapter, чтобы контролировать процесс сериализации и десериализации" />
+    <MESSAGE value="Создать TaskHandler, SubtaskHandler, EpicHandler, обработчики для трёх типов задач" />
+    <MESSAGE value="Сделать возвращаемое значение(параметр id) ля методов создания разных типов задач" />
+    <option name="LAST_COMMIT_MESSAGE" value="Сделать возвращаемое значение(параметр id) ля методов создания разных типов задач" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/java_kanban$TaskManagerTest_testGetTaskById.ic" NAME="TaskManagerTest.testGetTaskById Coverage Results" MODIFIED="1732097995462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

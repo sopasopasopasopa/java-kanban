@@ -110,7 +110,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
     }
 
     @Override
-    public void createTask(Task task) {
+    public int createTask(Task task) {
         task.setTaskId(++id);
         tasks.put(task.getTaskId(), task);
         try {
@@ -118,10 +118,11 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
         } catch (ManagerSaveException e) {
             throw new RuntimeException(e);
         }
+        return task.getTaskId();
     }
 
     @Override
-    public void createSubtask(Epic epic, Subtask subtask) {
+    public int createSubtask(Epic epic, Subtask subtask) {
         subtask.setTaskId(++id);
         subtasks.put(subtask.getTaskId(), subtask);
         epic.addSubtask(subtask);
@@ -131,10 +132,11 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
         } catch (ManagerSaveException e) {
             throw new RuntimeException(e);
         }
+        return subtask.getTaskId();
     }
 
     @Override
-    public void createEpic(Epic epic) {
+    public int createEpic(Epic epic) {
         epic.setTaskId(++id);
         epics.put(epic.getTaskId(), epic);
         try {
@@ -142,6 +144,7 @@ public class FileBackedTaskManager extends InMemoryTaskManager{
         } catch (ManagerSaveException e) {
             throw new RuntimeException(e);
         }
+        return epic.getTaskId();
     }
 
 

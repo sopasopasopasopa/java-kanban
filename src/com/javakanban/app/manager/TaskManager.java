@@ -14,6 +14,8 @@ public interface TaskManager {
     HashMap<Integer, Epic> epics = new HashMap<>();
     HashMap<Integer, Subtask> subtasks = new HashMap<>();
 
+    List<Task> getPrioritizedTasks();
+
     Task getTaskById(int taskId);
 
     Epic getEpicById(int epicId);
@@ -26,11 +28,11 @@ public interface TaskManager {
 
     void updateSubtask(Subtask subtask);
 
-    void createTask(Task task);
+    int createTask(Task task);
 
-    void createEpic(Epic epic);
+    int createEpic(Epic epic);
 
-    void createSubtask(Epic epic, Subtask subtask);
+    int createSubtask(Epic epic, Subtask subtask);
 
     void removeTasks();
 

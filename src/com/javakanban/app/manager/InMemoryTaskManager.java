@@ -21,6 +21,7 @@ public class InMemoryTaskManager implements TaskManager {
         this.historyManager = historyManager;
     }
 
+    @Override
     public List<Task> getPrioritizedTasks() {
         return new ArrayList<>(prioritizedTasks);
     }
@@ -109,7 +110,7 @@ public class InMemoryTaskManager implements TaskManager {
     }
 
     @Override
-    public void createTask(Task task) {
+    public int createTask(Task task) {
         if (hasOverlappingTasks(task)) {
             throw new IllegalArgumentException("Задача пересекается по времени с существующими задачами.");
         }
@@ -118,10 +119,11 @@ public class InMemoryTaskManager implements TaskManager {
         if (task.getStartTime() != null) {
             prioritizedTasks.add(task);
         }
+        return task.getTaskId();
     }
 
     @Override
-    public void createEpic(Epic epic) {
+    public int createEpic(Epic epic) {
         if (hasOverlappingTasks(epic)) {
             throw new IllegalArgumentException("Эпик пересекается по времени с существующими задачами.");
         }
@@ -130,10 +132,11 @@ public class InMemoryTaskManager implements TaskManager {
         if (epic.getStartTime() != null) {
             prioritizedTasks.add(epic);
         }
+        return epic.getTaskId();
     }
 
     @Override
-    public void createSubtask(Epic epic, Subtask subtask) {
+    public int createSubtask(Epic epic, Subtask subtask) {
         if (hasOverlappingTasks(subtask)) {
             throw new IllegalArgumentException("Подзадача пересекается по времени с существующими задачами.");
         }
@@ -144,6 +147,7 @@ public class InMemoryTaskManager implements TaskManager {
             prioritizedTasks.add(subtask);
         }
         updateStatusForEpics(epic);
+        return epic.getTaskId();
     }
 
     @Override
